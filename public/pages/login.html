@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy"
+        content="script-src 'self' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net/npm/sweetalert2@11 https://cdn.jsdelivr.net/npm/;">
+    <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
+    <link rel="stylesheet" href="../styles/login.css">
+    <title>User - Login</title>
+</head>
+
+<body>
+    <div class="mainContainer">
+        <div class="leftContainer">
+            <div class="appLogo">
+                <img src="../assets/AppLogo.png" title="day2day_logo" alt="appLogo">
+            </div>
+            <div class="headingMessage">
+                <p>Login to your account</p>
+            </div>
+            <div class="logInForm">
+                <div class="alert"></div>
+                <form class="form" id="form">
+                    <div class="formEmail">
+                        <input class="input" type="text" id="form-email" name="formEmail" required>
+                        <label class="label" for="formEmail">Email</label>
+                    </div>
+
+                    <div class="formPassword">
+                        <input class="input" type="password" id="form-password" name="formPassword" required>
+                        <label class="label" for="formPassword">Password</label>
+                        <div class="password-checkbox-container">
+                            <input type="checkbox" id="show-password" name="showPassword">
+                        </div>
+                    </div>
+
+                    <input type="submit" value="SignIn">
+                </form>
+            </div>
+            <div class="signIn">
+                <p><a href="" class="forgotPassword" id="forgot-password">Forget Password?</a>
+                    Don't have an account? <a style="color: #00572D; cursor: pointer; font-weight: 500;"
+                        href="signup.html">SignUp</a></p>
+            </div>
+        </div>
+
+        <div class="rightContainer">
+            <div class="loginImage">
+                <img src="../assets/loginImg.png" alt="signupImage">
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.1/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../scripts/login.js"></script>
+</body>
+
+</html>

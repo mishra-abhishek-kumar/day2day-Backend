@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
+    <link rel="stylesheet" href="../styles/home.css">
+    <title>Expense Tracker</title>
+</head>
+
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="main-nav flex">
+            <a href="#" class="company-logo">
+                <img src="../assets/logo.png" alt="company-logo">
+            </a>
+            <div class="nav-links" id="nav-links">
+                <ul class="flex">
+                    <li><a id="buy-premium"></a></li>
+                    <li><a class="expenseReport" id="expense-report"></a></li>
+                    <li><a class="leaderBoard" id="leader-board"></a></li>
+                    <li><a class="downloads" id="downloads"></a></li>
+                    <li><a id="profile" class="profile"><img src="../assets/rick.jpg" alt="profile-img"></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div id="profile-container" class="profileContainer">
+        <div class="profileOptions">
+            <a href="#">Profile</a>
+            <a id="logout" href="http://localhost:4000/pages/login.html">Logout</a>
+        </div>
+    </div>
+
+    <div class="mainContainer">
+        <div class="leftContainer">
+            <div class="headingMessage">
+                <p>ADD NEW EXPENSE</p>
+            </div>
+            <div class="logInForm">
+                <form class="form" id="form">
+                    <div class="expenseAmount">
+                        <input class="input" type="text" id="exp-amt" name="expenseAmount" required>
+                        <label class="label" for="exp-amt">Enter Amount</label>
+                    </div>
+
+                    <div class="expenseDescription">
+                        <input class="input" type="text" id="exp-desc" name="expenseDescription" required>
+                        <label class="label" for="exp-desc">Description</label>
+                    </div>
+
+                    <div class="expenseCategory">
+                        <select class="input" name="expenseCategory" id="expense-cat">
+                            <option value="" disabled selected hidden>Select category</option>
+                            <option value="food">Food</option>
+                            <option value="entertainment">Entertainment</option>
+                            <option value="shopping">Shopping</option>
+                            <option value="medicine">Medicine</option>
+                            <option value="investment">Investment</option>
+                        </select>
+                    </div>
+
+                    <input type="submit" value="Add Expense">
+                </form>
+            </div>
+        </div>
+        <div class="rightContainer">
+            <div class="headingMessage">
+                <p>ALL EXPENSES</p>
+            </div>
+            <ul class="list" id="expenses"></ul>
+            <div class="pagination" id="pagination">
+                <button class="paginationBtn" id="prevBtn">prev</button>
+                <button class="paginationBtn" id="nextBtn">next</button>
+                <select id="rowsPerPageSelect">
+                    <option value="5">5 rows per page</option>
+                    <option value="10">10 rows per page</option>
+                    <option value="20">20 rows per page</option>
+                    <!-- Add more options as needed -->
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.1/axios.min.js"></script>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.all.min.js"></script>
+    <script src="../scripts/home.js"></script>
+</body>
+
+</html>
