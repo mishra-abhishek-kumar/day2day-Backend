@@ -20,7 +20,7 @@ window.addEventListener("DOMContentLoaded", async () => {
 	document.getElementById("buy-premium").style.pointerEvents = "none";
 	try {
 		const reportURLs = await axios.get(
-			`http://localhost:4000/premium/get-report-url`,
+			`http://16.16.64.226:4000/premium/get-report-url`,
 			{ headers: { Authorization: localStorage.getItem("accessToken") } }
 		);
 		console.log(reportURLs.data);
@@ -47,9 +47,9 @@ function displayLeaderBoard(data) {
 
 //page navigators
 expenseReport.addEventListener("click", (e) => {
-	window.location.href = `http://localhost:4000/pages/expenseReport.html`;
+	window.location.href = `http://16.16.64.226:4000/pages/expenseReport.html`;
 });
 
 leaderboard.addEventListener("click", (e) => {
-	window.location.href = `http://localhost:4000/pages/leaderboard.html`;
+	window.location.href = `http://16.16.64.226:4000/pages/leaderboard.html`;
 });

@@ -19,12 +19,12 @@ async function createUser(e) {
 
 	try {
 		const response = await axios.post(
-			"http://localhost:4000/user/signup",
+			"http://16.16.64.226:4000/user/signup",
 			userInfo
 		);
 		if (response.status == "201") {
 			localStorage.setItem("accessToken", response.data);
-			window.location.href = `http://localhost:4000/pages/home.html`;
+			window.location.href = `http://16.16.64.226:4000/pages/home.html`;
 		}
 	} catch (error) {
 		if (error.response.status == "409") {
