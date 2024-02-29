@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
+    <link rel="stylesheet" href="../styles/signup.css">
+    <title>User - Signup</title>
+</head>
+
+<body>
+    <div class="mainContainer">
+        <div class="leftContainer">
+            <div class="signupImage">
+                <img src="../assets/4.jpg" alt="signupImage">
+            </div>
+        </div>
+
+        <div class="rightContainer">
+            <div class="appLogo">
+                <img src="../assets/AppLogo.png" title="day2day_logo" alt="appLogo">
+            </div>
+            <div class="headingMessage">
+                <p>Create your account</p>
+            </div>
+            <div class="signUpForm">
+                <div class="alert"></div>
+                <form class="form" id="form">
+                    <div class="formName">
+                        <input class="input" type="text" id="form-name" name="formName" required>
+                        <label class="label" for="formName">Name</label>
+                    </div>
+
+                    <div class="formEmail">
+                        <input class="input" type="text" id="form-email" name="formEmail" required>
+                        <label class="label" for="formEmail">Email</label>
+                    </div>
+
+                    <div class="formPassword">
+                        <input class="input" type="password" id="form-password" name="formPassword" required>
+                        <label class="label" for="formPassword">Password</label>
+                        <div class="password-checkbox-container">
+                            <input type="checkbox" id="show-password" name="showPassword">
+                        </div>
+                    </div>
+
+                    <input type="submit" value="SignUp">
+                </form>
+            </div>
+            <div class="signIn">
+                <p>Already an user? <a style="color: #00572D; cursor: pointer; font-weight: 500;"
+                        href="login.html">SignIn</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.1/axios.min.js"></script>
+    <script src="../scripts/signup.js"></script>
+</body>
+
+</html>

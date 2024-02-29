@@ -7,7 +7,7 @@ const bcrypt = require("bcrypt");
 
 const userExist = async (req, res) => {
 	const emailId = req.body.email;
-    
+
 	try {
 		const user = await User.findAll({ where: { email: emailId } });
 		res.status(200).json({ user: user });
@@ -62,13 +62,13 @@ const forgotPassword = async (req, res) => {
 				htmlContent: `<h2>Click below link to reset your password</h2>
                             <p style="padding-bottom:10px">This link will get expired once you reset the password</p>
                             <a style="color:white; background-color:#00572D; padding:20px; text-align:center;" 
-                            href="http://127.0.0.1:5500/FrontEnd/pages/forgotPassword.html?uuid={{params.uuid}}">Reset Password</a>`,
+                            href="http://16.16.64.226:4000/pages/forgotPassword.html?uuid={{params.uuid}}">Reset Password</a>`,
 			},
 			{ transaction: txn }
 		);
 		await txn.commit();
 
-		res.status(200).json({ email: messageId });
+		res.status(200).json({ email: messageId, uuid: uuid });
 	} catch (error) {
 		console.log(error);
 		res.status(401).send(error);
@@ -110,7 +110,7 @@ const updateUserPassword = async (req, res) => {
 			{ isActive: false },
 			{ where: { uuid: uuid } }
 		);
-        
+
 		await txn.commit();
 		res.status(200).json({ updatedUser: updatedUser });
 	} catch (error) {

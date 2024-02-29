@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+::selection {
+    color: white;
+    background-color: #00572D;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.main-nav {
+    height: 6rem;
+    width: 100%;
+    background-color: #00572D;
+    padding-inline: 4rem;
+    box-shadow: 0px 10px 40px 20px #f7da8f;
+}
+
+.company-logo {
+    width: fit-content;
+    height: 12vh;
+}
+
+.company-logo img {
+    width: 100%;
+    height: 100%;
+}
+
+.nav-links a {
+    text-decoration: none;
+    display: inline-block;
+}
+
+.nav-links ul {
+    list-style: none;
+}
+
+.nav-links ul li {
+    padding: 10px;
+}
+
+.profile {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    background-color: gray;
+    cursor: pointer;
+}
+
+.profile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 100%;
+}
+
+.premium-btn {
+    width: fit-content;
+    background-image: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%),
+        radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);
+    margin: 10px;
+    padding: 10px 15px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.3s;
+    background-size: 200% auto;
+    border-radius: 10px;
+    display: block;
+    right: 1vw;
+    top: 2%;
+}
+
+.expenseReport,
+.leaderBoard,
+.downloads {
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+.expenseReport:hover,
+.downloads:hover {
+    background-color: #049e54;
+    border-radius: 10px;
+}
+
+.expenseReport {
+    padding: 8px 12px;
+    background-color: #049e54;
+    border-radius: 10px;
+}
+
+.leaderBoard {
+    padding: 8px 12px;
+    border-radius: 10px;
+}
+
+.leaderBoard:hover {
+    background-color: #049e54;
+}
+
+.profileContainer {
+    display: block;
+    width: fit-content;
+    height: fit-content;
+    background-color: white;
+    box-shadow: 0 0 5px #eee;
+    position: absolute;
+    top: 4.5rem;
+    right: 3rem;
+    display: none;
+}
+
+.profileOptions a {
+    text-decoration: none;
+    display: flex;
+    color: #00572D;
+    gap: 10px;
+    box-shadow: 0 0 2px #00572D;
+    padding: 5px 20px;
+}
+
+.profileOptions a:hover {
+    color: black;
+}
+
+.mainContainer {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    width: 100vw;
+    height: 80vh;
+}
+
+.heading {
+    color: #00572D;
+    font-size: xx-large;
+}
+
+.dailyReport,
+.monthlyReport,
+.yearlyReport {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem 0.5rem;
+    gap: 1rem;
+}
+
+.dailyTable,
+.monthlyTable,
+.yearlyTable {
+    width: 100%;
+    max-height: 55vh;
+    overflow: auto;
+}
+
+th {
+    background-color: #00572D;
+    color: white;
+}
+
+table,
+th,
+td {
+    border: 1px solid #00572D;
+    border-collapse: collapse;
+    padding: 0.3rem;
+}
+
+.downloadBtn {
+    background-color: #00572D;
+    color: white;
+    padding: 10px;
+}
+
+.downloadBtn:hover {
+    background-color: #082417;
+    color: white;
+}
+
+.downloadBtn:active {
+    background-color: #00572D;
+    color: white;
+}
+
+/* Scrollbar */
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px #00572D;
+    border-radius: 8px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #00572D;
+    border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #00572D;
+}
