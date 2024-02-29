@@ -189,7 +189,7 @@ yearlyReportURL.addEventListener("click", async (e) => {
 
 //page navigators
 leaderBoard.addEventListener("click", (e) => {
-	window.location.href = `http://16.16.64.226:4000/pages/leaderBoard.html`;
+	window.location.href = `http://16.16.64.226:4000/pages/leaderboard.html`;
 });
 
 downloads.addEventListener("click", (e) => {
