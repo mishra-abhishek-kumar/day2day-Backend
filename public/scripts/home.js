@@ -52,17 +52,14 @@ let currentPage = 1;
 
 async function paginatedData(page) {
 	try {
-		const userData = await axios.get(
-			`http://16.16.64.226:4000/user/ispremium`,
-			{
-				headers: { Authorization: localStorage.getItem("accessToken") },
-			}
-		);
+		const userData = await axios.get(`http://3.25.154.66:4000/user/ispremium`, {
+			headers: { Authorization: localStorage.getItem("accessToken") },
+		});
 
 		premiumFeatur(userData.data.isPremium);
 
 		const expenses = await axios.get(
-			`http://16.16.64.226:4000/expenses/get-expense`,
+			`http://3.25.154.66:4000/expenses/get-expense`,
 			{
 				headers: {
 					Authorization: localStorage.getItem("accessToken"),
@@ -188,7 +185,7 @@ async function addExpense(e) {
 
 	try {
 		const response = await axios.post(
-			`http://16.16.64.226:4000/expenses/add-expense`,
+			`http://3.25.154.66:4000/expenses/add-expense`,
 			expenseObj,
 			{
 				headers: {
@@ -211,7 +208,7 @@ async function removeExpense(e) {
 	if (e.target.classList.contains("del")) {
 		try {
 			const response = await axios.delete(
-				`http://16.16.64.226:4000/expenses/delete-expense/${e.target.parentElement.id}`,
+				`http://3.25.154.66:4000/expenses/delete-expense/${e.target.parentElement.id}`,
 				{
 					headers: { Authorization: localStorage.getItem("accessToken") },
 				}
@@ -227,7 +224,7 @@ async function buyPremium(e) {
 	const accessToken = localStorage.getItem("accessToken");
 	//getting orderId and razorpayKey from backend
 	const response = await axios.get(
-		`http://16.16.64.226:4000/premium/buy-premium`,
+		`http://3.25.154.66:4000/premium/buy-premium`,
 		{
 			headers: {
 				Authorization: accessToken,
@@ -242,7 +239,7 @@ async function buyPremium(e) {
 		handler: async (response) => {
 			//as soon as payment's done this handler function gets called(provides paymentId)
 			await axios.post(
-				`http://16.16.64.226:4000/premium/update-txn-status`,
+				`http://3.25.154.66:4000/premium/update-txn-status`,
 				{
 					orderId: options.order_id,
 					paymentId: response.razorpay_payment_id,
@@ -284,13 +281,13 @@ async function buyPremium(e) {
 
 //page navigators
 expenseReport.addEventListener("click", (e) => {
-	window.location.href = `http://16.16.64.226:4000/pages/expenseReport.html`;
+	window.location.href = `http://3.25.154.66:4000/pages/expenseReport.html`;
 });
 
 leaderBoard.addEventListener("click", (e) => {
-	window.location.href = `http://16.16.64.226:4000/pages/leaderboard.html`;
+	window.location.href = `http://3.25.154.66:4000/pages/leaderboard.html`;
 });
 
 downloads.addEventListener("click", (e) => {
-	window.location.href = `http://16.16.64.226:4000/pages/downloads.html`;
+	window.location.href = `http://3.25.154.66:4000/pages/downloads.html`;
 });
