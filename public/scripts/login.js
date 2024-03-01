@@ -19,12 +19,12 @@ async function loginUser(e) {
 
 	try {
 		const response = await axios.post(
-			"http://16.16.64.226:4000/user/login",
+			"http://3.25.154.66:4000/user/login",
 			userInfo
 		);
 		if (response.status == "200") {
 			localStorage.setItem("accessToken", response.data);
-			window.location.href = `http://16.16.64.226:4000/pages/home.html`;
+			window.location.href = `http://3.25.154.66:4000/pages/home.html`;
 		}
 	} catch (error) {
 		if (error.response.status == "409") {
@@ -81,13 +81,13 @@ async function resetPassword(e) {
 		preConfirm: async (emailId) => {
 			try {
 				const userExist = await axios.post(
-					`http://16.16.64.226:4000/password/user-exist`,
+					`http://3.25.154.66:4000/password/user-exist`,
 					{ email: emailId }
 				);
 
 				if (userExist.data.user.length == 1) {
 					const response = await axios.post(
-						`http://16.16.64.226:4000/password/forgot-password`,
+						`http://3.25.154.66:4000/password/forgot-password`,
 						{ email: emailId }
 					);
 					Swal.fire({
