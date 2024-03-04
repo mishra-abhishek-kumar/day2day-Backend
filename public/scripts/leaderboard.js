@@ -20,7 +20,7 @@ window.addEventListener("DOMContentLoaded", async () => {
 	document.getElementById("buy-premium").style.pointerEvents = "none";
 	try {
 		const allUserExpenses = await axios.get(
-			`http://3.25.151.168:4000/premium/show-leaderboard`,
+			`http://3.105.186.150/premium/show-leaderboard`,
 			{ headers: { Authorization: localStorage.getItem("accessToken") } }
 		);
 
@@ -47,9 +47,9 @@ function displayLeaderBoard(data) {
 
 //page navigators
 expenseReport.addEventListener("click", (e) => {
-	window.location.href = `http://3.25.151.168:4000/pages/expenseReport.html`;
+	window.location.href = `http://3.105.186.150/pages/expenseReport.html`;
 });
 
 downloads.addEventListener("click", (e) => {
-	window.location.href = `http://3.25.151.168:4000/pages/downloads.html`;
+	window.location.href = `http://3.105.186.150/pages/downloads.html`;
 });
