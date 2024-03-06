@@ -162,27 +162,28 @@ const yearlyExpenseReport = async (req, res) => {
 };
 
 const postReportURL = async (req, res) => {
-    const { url, downloadDate } = req.body;
-    try {
-        const reportURL = await Download.create( {
-            url: url,
-            downloadDate: downloadDate,
-            userId: req.id
-        });
-        res.send(reportURL);
-    } catch (error) {
-        console.log(error);
-    }
-}
+	const { url, downloadDate } = req.body;
+	console.log("doosra padaw");
+	try {
+		const reportURL = await Download.create({
+			url: url,
+			downloadDate: downloadDate,
+			userId: req.id,
+		});
+		res.send(reportURL);
+	} catch (error) {
+		console.log(error);
+	}
+};
 
 const getReportURL = async (req, res) => {
-    try {
-        const reportURLs = await Download.findAll({ where: { userId: req.id}});
-        res.send(reportURLs);
-    } catch (error) {
-        console.log(error);
-    }
-}
+	try {
+		const reportURLs = await Download.findAll({ where: { userId: req.id } });
+		res.send(reportURLs);
+	} catch (error) {
+		console.log(error);
+	}
+};
 
 function uploadToS3(data, filename) {
 	let s3bucket = new AWS.S3({
@@ -217,6 +218,6 @@ module.exports = {
 	dailyExpenseReport,
 	monthlyExpenseReport,
 	yearlyExpenseReport,
-    postReportURL,
-    getReportURL
+	postReportURL,
+	getReportURL,
 };
