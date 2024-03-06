@@ -142,8 +142,7 @@
 .listUsers {
     width: 50vw;
     background-color: #c0fdc0d3;
-    border: 2px solid #00572D;
-    border: 7px double #00572D;
+    border: 1px solid #00572D;
 }
 
 
@@ -154,12 +153,14 @@ ul li {
     margin: 5px 0;
 }
 
-table,
+
 th,
 td {
     border: 1px solid black;
 }
 
 td {
+    max-width: 2rem;
+    overflow: hidden;
     text-align: center;
 }

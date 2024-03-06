@@ -20,19 +20,19 @@ window.addEventListener("DOMContentLoaded", async () => {
 	document.getElementById("buy-premium").style.pointerEvents = "none";
 	try {
 		const reportURLs = await axios.get(
-			`http://3.105.186.150/premium/get-report-url`,
+			`http://localhost:4000/premium/get-report-url`,
 			{ headers: { Authorization: localStorage.getItem("accessToken") } }
 		);
 		console.log(reportURLs.data);
 		for (let i = 0; i < reportURLs.data.length; i++) {
-			displayLeaderBoard(reportURLs.data[i]);
+			displayDownloads(reportURLs.data[i]);
 		}
 	} catch (error) {
 		console.log(error);
 	}
 });
 
-function displayLeaderBoard(data) {
+function displayDownloads(data) {
 	const tr = document.createElement("tr");
 	const thName = document.createElement("td");
 	const thAmt = document.createElement("td");
@@ -47,9 +47,9 @@ function displayLeaderBoard(data) {
 
 //page navigators
 expenseReport.addEventListener("click", (e) => {
-	window.location.href = `http://3.105.186.150/pages/expenseReport.html`;
+	window.location.href = `http://localhost:4000/pages/expenseReport.html`;
 });
 
 leaderboard.addEventListener("click", (e) => {
-	window.location.href = `http://3.105.186.150/pages/leaderboard.html`;
+	window.location.href = `http://localhost:4000/pages/leaderboard.html`;
 });

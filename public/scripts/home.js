@@ -52,14 +52,14 @@ let currentPage = 1;
 
 async function paginatedData(page) {
 	try {
-		const userData = await axios.get(`http://3.105.186.150/user/ispremium`, {
+		const userData = await axios.get(`http://localhost:4000/user/ispremium`, {
 			headers: { Authorization: localStorage.getItem("accessToken") },
 		});
 
 		premiumFeatur(userData.data.isPremium);
 
 		const expenses = await axios.get(
-			`http://3.105.186.150/expenses/get-expense`,
+			`http://localhost:4000/expenses/get-expense`,
 			{
 				headers: {
 					Authorization: localStorage.getItem("accessToken"),
@@ -185,7 +185,7 @@ async function addExpense(e) {
 
 	try {
 		const response = await axios.post(
-			`http://3.105.186.150/expenses/add-expense`,
+			`http://localhost:4000/expenses/add-expense`,
 			expenseObj,
 			{
 				headers: {
@@ -208,7 +208,7 @@ async function removeExpense(e) {
 	if (e.target.classList.contains("del")) {
 		try {
 			const response = await axios.delete(
-				`http://3.105.186.150/expenses/delete-expense/${e.target.parentElement.id}`,
+				`http://localhost:4000/expenses/delete-expense/${e.target.parentElement.id}`,
 				{
 					headers: { Authorization: localStorage.getItem("accessToken") },
 				}
@@ -223,11 +223,14 @@ async function removeExpense(e) {
 async function buyPremium(e) {
 	const accessToken = localStorage.getItem("accessToken");
 	//getting orderId and razorpayKey from backend
-	const response = await axios.get(`http://3.105.186.150/premium/buy-premium`, {
-		headers: {
-			Authorization: accessToken,
-		},
-	});
+	const response = await axios.get(
+		`http://localhost:4000/premium/buy-premium`,
+		{
+			headers: {
+				Authorization: accessToken,
+			},
+		}
+	);
 
 	//creating object to pass inside payment
 	const options = {
@@ -236,7 +239,7 @@ async function buyPremium(e) {
 		handler: async (response) => {
 			//as soon as payment's done this handler function gets called(provides paymentId)
 			await axios.post(
-				`http://3.105.186.150/premium/update-txn-status`,
+				`http://localhost:4000/premium/update-txn-status`,
 				{
 					orderId: options.order_id,
 					paymentId: response.razorpay_payment_id,
@@ -278,13 +281,13 @@ async function buyPremium(e) {
 
 //page navigators
 expenseReport.addEventListener("click", (e) => {
-	window.location.href = `http://3.105.186.150/pages/expenseReport.html`;
+	window.location.href = `http://localhost:4000/pages/expenseReport.html`;
 });
 
 leaderBoard.addEventListener("click", (e) => {
-	window.location.href = `http://3.105.186.150/pages/leaderboard.html`;
+	window.location.href = `http://localhost:4000/pages/leaderboard.html`;
 });
 
 downloads.addEventListener("click", (e) => {
-	window.location.href = `http://3.105.186.150/pages/downloads.html`;
+	window.location.href = `http://localhost:4000/pages/downloads.html`;
 });

@@ -29,7 +29,7 @@ router.get(
 	premiumController.yearlyExpenseReport
 );
 
-router.post("/post=report-url", requiredUser, premiumController.postReportURL);
+router.post("/post-report-url", requiredUser, premiumController.postReportURL);
 router.get("/get-report-url", requiredUser, premiumController.getReportURL);
 
 module.exports = router;
