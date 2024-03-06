@@ -25,7 +25,7 @@ window.addEventListener("DOMContentLoaded", async () => {
 	document.getElementById("buy-premium").style.pointerEvents = "none";
 	try {
 		const expenseData = await axios.get(
-			`http://localhost:4000/premium/daily-expense-report`,
+			`http://3.105.186.150/premium/daily-expense-report`,
 			{ headers: { Authorization: localStorage.getItem("accessToken") } }
 		);
 
@@ -40,7 +40,7 @@ window.addEventListener("DOMContentLoaded", async () => {
 
 	try {
 		const expenseData = await axios.get(
-			`http://localhost:4000/premium/monthly-expense-report`,
+			`http://3.105.186.150/premium/monthly-expense-report`,
 			{ headers: { Authorization: localStorage.getItem("accessToken") } }
 		);
 		console.log(expenseData.data.fileURL);
@@ -54,7 +54,7 @@ window.addEventListener("DOMContentLoaded", async () => {
 
 	try {
 		const expenseData = await axios.get(
-			`http://localhost:4000/premium/yearly-expense-report`,
+			`http://3.105.186.150/premium/yearly-expense-report`,
 			{ headers: { Authorization: localStorage.getItem("accessToken") } }
 		);
 		console.log(expenseData.data.fileURL);
@@ -138,7 +138,7 @@ dailyReportURL.addEventListener("click", async (e) => {
 
 	try {
 		await axios.post(
-			`http://localhost:4000/premium/post-report-url`,
+			`http://3.105.186.150/premium/post-report-url`,
 			reportDetail,
 			{
 				headers: { Authorization: localStorage.getItem("accessToken") },
@@ -157,7 +157,7 @@ monthlyReportURL.addEventListener("click", async (e) => {
 
 	try {
 		await axios.post(
-			`http://localhost:4000/premium/post-report-url`,
+			`http://3.105.186.150/premium/post-report-url`,
 			reportDetail,
 			{
 				headers: { Authorization: localStorage.getItem("accessToken") },
@@ -175,7 +175,7 @@ yearlyReportURL.addEventListener("click", async (e) => {
 	};
 	try {
 		await axios.post(
-			`http://localhost:4000/premium/post-report-url`,
+			`http://3.105.186.150/premium/post-report-url`,
 			reportDetail,
 			{
 				headers: { Authorization: localStorage.getItem("accessToken") },
@@ -188,9 +188,9 @@ yearlyReportURL.addEventListener("click", async (e) => {
 
 //page navigators
 leaderBoard.addEventListener("click", (e) => {
-	window.location.href = `http://localhost:4000/pages/leaderboard.html`;
+	window.location.href = `http://3.105.186.150/pages/leaderboard.html`;
 });
 
 downloads.addEventListener("click", (e) => {
-	window.location.href = `http://localhost:4000/pages/downloads.html`;
+	window.location.href = `http://3.105.186.150/pages/downloads.html`;
 });

@@ -4,7 +4,7 @@ window.addEventListener("DOMContentLoaded", async () => {
 	const uuid = urlParams.get("uuid");
 
 	const userExist = await axios.get(
-		`http://localhost:4000/password/get-user/${uuid}`
+		`http://3.105.186.150/password/get-user/${uuid}`
 	);
 	const userMakingReq = userExist.data[0].userId;
 	console.log(userMakingReq);
@@ -25,7 +25,7 @@ window.addEventListener("DOMContentLoaded", async () => {
 			preConfirm: async (newPassword) => {
 				try {
 					const userExist = await axios.post(
-						`http://localhost:4000/password/update-password`,
+						`http://3.105.186.150/password/update-password`,
 						{ id: userMakingReq, password: newPassword, uuid: uuid }
 					);
 
@@ -34,7 +34,7 @@ window.addEventListener("DOMContentLoaded", async () => {
 						icon: "success",
 					});
 					setTimeout(() => {
-						window.location.href = "http://localhost:4000/pages/login.html";
+						window.location.href = "http://3.105.186.150/pages/login.html";
 					}, 2500);
 				} catch (error) {
 					Swal.showValidationMessage(`Request failed: ${error}`);

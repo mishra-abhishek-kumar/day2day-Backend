@@ -62,7 +62,7 @@ const forgotPassword = async (req, res) => {
 				htmlContent: `<h2>Click below link to reset your password</h2>
                             <p style="padding-bottom:10px">This link will get expired once you reset the password</p>
                             <a style="color:white; background-color:#00572D; padding:20px; text-align:center;" 
-                            href="http://localhost:4000/pages/forgotPassword.html?uuid={{params.uuid}}">Reset Password</a>`,
+                            href="http://3.105.186.150/pages/forgotPassword.html?uuid={{params.uuid}}">Reset Password</a>`,
 			},
 			{ transaction: txn }
 		);
